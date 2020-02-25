@@ -9,6 +9,14 @@
 </dd>
 </dl>
 
+## Typedefs
+
+<dl>
+<dt><a href="#iterator">iterator</a> : <code>function</code></dt>
+<dd><p>This callback &#39;ITERATOR&#39; is a function that will run for each item on the collection. Once the &#39;done&#39; cb is called, the current iteration will end</p>
+</dd>
+</dl>
+
 <a name="foo"></a>
 
 ## foo(n) ⇒ <code>string</code>
@@ -36,4 +44,18 @@ A quite wonderful function.
 | --- | --- | --- |
 | cloak | <code>object</code> | Privacy gown |
 | dagger | <code>object</code> | Security |
+
+<a name="iterator"></a>
+
+## iterator : <code>function</code>
+This callback 'ITERATOR' is a function that will run for each item on the collection. Once the 'done' cb is called, the current iteration will end
+
+**Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>any</code> |  |
+| index | <code>int</code> | current iteration index |
+| done | <code>fn</code> | callback that will define when the current iteration is finished |
+
 
