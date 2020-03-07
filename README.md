@@ -16,7 +16,7 @@
 <dt><a href="#getDaysLeft">getDaysLeft(paidUntil)</a> ⇒ <code>int</code></dt>
 <dd><p>Get difference in days</p>
 </dd>
-<dt><a href="#getUrlParameter">getUrlParameter(urlParam)</a></dt>
+<dt><a href="#getUrlParameter">getUrlParameter(urlParam)</a> ⇒ <code>string</code></dt>
 <dd><p>Get value of the query param</p>
 </dd>
 <dt><a href="#isValidUrl">isValidUrl(str)</a> ⇒ <code>boolean</code></dt>
@@ -27,6 +27,9 @@
 </dd>
 <dt><a href="#trimDomain">trimDomain(urlParam)</a> ⇒ <code>string</code></dt>
 <dd><p>Returns only the domain name (removes https / http/ query params)</p>
+</dd>
+<dt><a href="#withTitle">withTitle(HocComponent, title)</a></dt>
+<dd><p>Returns a Component with an injected Title Component.</p>
 </dd>
 </dl>
 
@@ -60,10 +63,11 @@ getDaysLeft(userData.paidUntil)
 ```
 <a name="getUrlParameter"></a>
 
-## getUrlParameter(urlParam)
+## getUrlParameter(urlParam) ⇒ <code>string</code>
 Get value of the query param
 
 **Kind**: global function  
+**Returns**: <code>string</code> - - domain  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -112,5 +116,22 @@ Returns only the domain name (removes https / http/ query params)
 **Example**  
 ```js
 trimDomain('https://momentjs.com/') // returns 'momentjs.com'
+```
+<a name="withTitle"></a>
+
+## withTitle(HocComponent, title)
+Returns a Component with an injected Title Component.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| HocComponent | <code>Component</code> | Component to add title |
+| title | <code>string</code> |  |
+
+**Example**  
+```js
+import LoginPage from './containers/LoginPage'
+const Login = withTitle(LoginPage, 'Login · GA Connector')
 ```
 
