@@ -67,8 +67,13 @@ Get value of the query param
 
 | Param | Type | Description |
 | --- | --- | --- |
-| urlParam | <code>string</code> | query param key ex. window.location = http://google.com?name=gaconnector getUrlParameter('name') // -> returns 'gaconnector' |
+| urlParam | <code>string</code> | query param key |
 
+**Example**  
+```js
+// window.location = http://google.com?name=gaconnector
+getUrlParameter('name') // -> returns 'gaconnector'
+```
 <a name="isValidUrl"></a>
 
 ## isValidUrl(str) ⇒ <code>boolean</code>
