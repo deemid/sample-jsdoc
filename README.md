@@ -54,6 +54,10 @@ Get difference in days
 | --- | --- | --- |
 | paidUntil | <code>int</code> | account.paidUntil |
 
+**Example**  
+```js
+getDaysLeft(userData.paidUntil)
+```
 <a name="getUrlParameter"></a>
 
 ## getUrlParameter(urlParam)
