@@ -1,61 +1,107 @@
+## Constants
+
+<dl>
+<dt><a href="#addLocaleData">addLocaleData</a></dt>
+<dd><p>i18n.js</p>
+<p>This will setup the i18n language files and locale data for your app.</p>
+<p>  IMPORTANT: This file is used by the internal build
+  script <code>extract-intl</code>, and must use CommonJS module syntax
+  You CANNOT use import/export in this file.</p>
+</dd>
+</dl>
+
 ## Functions
 
 <dl>
-<dt><a href="#foo">foo(n)</a> ⇒ <code>string</code></dt>
-<dd><p>This is a function.</p>
+<dt><a href="#getDaysLeft">getDaysLeft(paidUntil)</a> ⇒ <code>int</code></dt>
+<dd><p>Get difference in days</p>
 </dd>
-<dt><a href="#protection">protection(cloak, dagger)</a> ⇒ <code>survival</code></dt>
-<dd><p>A quite wonderful function.</p>
+<dt><a href="#getUrlParameter">getUrlParameter(urlParam)</a></dt>
+<dd><p>Get value of the query param</p>
+</dd>
+<dt><a href="#isValidUrl">isValidUrl(str)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Returns true if URL is valid</p>
+</dd>
+<dt><a href="#renderDaysLeft">renderDaysLeft(paidUntil)</a> ⇒ <code>string</code></dt>
+<dd><p>Returns a string of the time left from paidUntil (used for render)</p>
+</dd>
+<dt><a href="#trimDomain">trimDomain(urlParam)</a> ⇒ <code>string</code></dt>
+<dd><p>Returns only the domain name (removes https / http/ query params)</p>
 </dd>
 </dl>
 
-## Typedefs
+<a name="addLocaleData"></a>
 
-<dl>
-<dt><a href="#iterator">iterator</a> : <code>function</code></dt>
-<dd><p>This callback &#39;ITERATOR&#39; is a function that will run for each item on the collection. Once the &#39;done&#39; cb is called, the current iteration will end</p>
-</dd>
-</dl>
+## addLocaleData
+i18n.js
 
-<a name="foo"></a>
+This will setup the i18n language files and locale data for your app.
 
-## foo(n) ⇒ <code>string</code>
-This is a function.
+  IMPORTANT: This file is used by the internal build
+  script `extract-intl`, and must use CommonJS module syntax
+  You CANNOT use import/export in this file.
+
+**Kind**: global constant  
+<a name="getDaysLeft"></a>
+
+## getDaysLeft(paidUntil) ⇒ <code>int</code>
+Get difference in days
+
+**Kind**: global function  
+**Returns**: <code>int</code> - expirationDate difference in days  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| paidUntil | <code>int</code> | account.paidUntil |
+
+<a name="getUrlParameter"></a>
+
+## getUrlParameter(urlParam)
+Get value of the query param
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| urlParam | <code>string</code> | query param key ex. window.location = http://google.com?name=gaconnector getUrlParameter('name') // -> returns 'gaconnector' |
+
+<a name="isValidUrl"></a>
+
+## isValidUrl(str) ⇒ <code>boolean</code>
+Returns true if URL is valid
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| str | <code>string</code> | 
+
+<a name="renderDaysLeft"></a>
+
+## renderDaysLeft(paidUntil) ⇒ <code>string</code>
+Returns a string of the time left from paidUntil (used for render)
+
+**Kind**: global function  
+**Returns**: <code>string</code> - 'Expired' if expiration date < current date or 'number of days left'  
+
+| Param | Type |
+| --- | --- |
+| paidUntil | <code>int</code> | 
+
+<a name="trimDomain"></a>
+
+## trimDomain(urlParam) ⇒ <code>string</code>
+Returns only the domain name (removes https / http/ query params)
 
 **Kind**: global function  
 **Returns**: <code>string</code> - A good string  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| n | <code>string</code> | A string param |
+| Param | Type |
+| --- | --- |
+| urlParam | <code>string</code> | 
 
 **Example**  
 ```js
-foo('hello')
+trimDomain('https://momentjs.com/') // returns 'momentjs.com'
 ```
-<a name="protection"></a>
-
-## protection(cloak, dagger) ⇒ <code>survival</code>
-A quite wonderful function.
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| cloak | <code>object</code> | Privacy gown |
-| dagger | <code>object</code> | Security |
-
-<a name="iterator"></a>
-
-## iterator : <code>function</code>
-This callback 'ITERATOR' is a function that will run for each item on the collection. Once the 'done' cb is called, the current iteration will end
-
-**Kind**: global typedef  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>any</code> |  |
-| index | <code>int</code> | current iteration index |
-| done | <code>fn</code> | callback that will define when the current iteration is finished |
-
 
